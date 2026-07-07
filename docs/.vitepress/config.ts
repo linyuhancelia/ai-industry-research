@@ -27,7 +27,7 @@ export default withMermaid(
           items: [
             { text: 'Week 1 · 电力与能源底层', link: '/week-01/lecture' },
             { text: 'Week 2 · 数据中心', link: '/week-02/lecture' },
-            { text: 'Week 3 · 高速互联 🔒', link: '/week-03/' },
+            { text: 'Week 3 · 高速互联', link: '/week-03/lecture' },
           ]
         },
         { text: '术语表', link: '/glossary' },
@@ -67,10 +67,12 @@ export default withMermaid(
                 ]
               },
               {
-                text: 'Week 3 · 高速互联 🔒',
-                collapsed: true,
+                text: 'Week 3 · 高速互联',
+                collapsed: false,
                 items: [
-                  { text: '📖 讲义', link: '/week-03/' },
+                  { text: '📖 讲义', link: '/week-03/lecture' },
+                  { text: '💬 互动记录', link: '/week-03/interaction' },
+                  { text: '✅ 认知存盘', link: '/week-03/takeaways' },
                 ]
               },
             ]
