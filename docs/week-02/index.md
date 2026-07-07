@@ -1,18 +1,21 @@
 ---
-prev:
-  text: '12 周大纲'
-  link: '/outline'
-next: false
+layout: page
 ---
+
+<script setup>
+import { onMounted } from 'vue'
+import { useRouter, withBase } from 'vitepress'
+
+onMounted(() => {
+  const router = useRouter()
+  router.go(withBase('/week-02/lecture'))
+})
+</script>
 
 # Week 2 · 数据中心：土建、制冷与选址经济学
 
-::: warning 🔒 本周内容尚未解锁
-完成上一周（Week 1 · 电力、电网与能源底层）的思考题互动与存盘后自动解锁。
+::: tip ✅ 已解锁
+本周内容已解锁，正在跳转到讲义页面...
+
+如果没有自动跳转，请点击：[📖 进入讲义](/week-02/lecture)
 :::
-
-## 本周预告
-
-- 液冷 vs 风冷的 TCO 分水岭在哪？什么规模下液冷才真正划算？
-- Tier IV 级别数据中心的资本结构是怎样的？一个 100MW 园区的总投资拆分？
-- 数据中心选址的关键变量：电价、网络时延、土地成本、气候条件如何权衡？
