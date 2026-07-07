@@ -40,7 +40,39 @@
 
 ## 数据中心（Week 2）
 
-（Week 2 解锁后更新）
+| 术语 | 英文 | 定义 | 首现 |
+|------|------|------|------|
+| **DC** | Data Center | 数据中心，承载 IT 设备的物理设施，本质是能量转换与热管理系统 | W2 |
+| **UPS** | Uninterruptible Power Supply | 不间断电源，在市电中断时提供过渡电力保障 | W2 |
+| **PDU** | Power Distribution Unit | 配电单元，将高压电分配到各机柜的设备 | W2 |
+| **PSU** | Power Supply Unit | 电源，服务器内部将交流电转为直流电（AC-DC 转换）的组件 | W2 |
+| **Thermal Throttling** | Thermal Throttling | 温度降频，芯片过热时自动降低运行频率以保护硬件，代价是性能下降 | W2 |
+| **Cold Plate** | Cold Plate | 冷板，贴在芯片表面的金属散热板，内部流通冷却液带走热量。当前 AI 液冷主流方案 | W2 |
+| **CDU** | Coolant Distribution Unit | 冷却液分配单元，液冷系统中负责冷却液循环和温度控制的核心设备 | W2 |
+| **浸没式液冷** | Immersion Cooling | 将整个服务器浸泡在绝缘冷却液中散热，PUE 极低但运维复杂、存在 PFAS 监管风险 | W2 |
+| **PFAS** | Per- and Polyfluoroalkyl Substances | 全氟烷基物质，浸没式液冷使用的氟化冷却液成分，欧盟/美国多州正推进限制或禁令 | W2 |
+| **自然冷却** | Free Cooling | 利用外部低温空气直接为数据中心降温，适用于寒冷气候地区，可显著降低 PUE | W2 |
+| **Tier III/IV** | Tier III/IV | 数据中心可靠性分级标准，Tier III 可并行维护（99.982%），Tier IV 容错（99.995%） | W2 |
+| **托管** | Colocation | 第三方 DC 运营商出租机柜/电力/带宽，客户自带服务器入驻 | W2 |
+| **定制建设** | Build-to-Suit | 按客户需求定制设计和建造数据中心，适用于超大规模部署 | W2 |
+| **模块化预制** | Modular Prefab | 模块化预制数据中心，工厂生产标准模块现场拼装，建设周期 6-9 个月 | W2 |
+| **HVAC** | Heating Ventilation and Air Conditioning | 暖通空调系统，传统数据中心散热的核心基础设施 | W2 |
+| **IXP** | Internet Exchange Point | 互联网交换点，不同网络运营商互联互通的枢纽，影响 DC 选址 | W2 |
+| **数据主权** | Data Sovereignty | 数据必须存储和处理在特定国家/地区境内的法律要求 | W2 |
+| **出口管制** | Export Control | 政府限制特定技术或产品出口的政策，如美国对华芯片出口管制 | W2 |
+| **超大规模云厂商** | Hyperscaler | 微软/Google/Amazon 等自建数据中心的超大规模云计算企业 | W2 |
+| **TCO** | Total Cost of Ownership | 总拥有成本，包含资本支出和全生命周期运营成本的综合指标 | W2 |
+
+## 网络与互联（Week 1-2 互动补充）
+
+| 术语 | 英文 | 定义 | 首现 |
+|------|------|------|------|
+| **InfiniBand** | InfiniBand (IB) | 高性能计算专用网络协议，时延 0.5-1.5 微秒，NVIDIA 通过收购 Mellanox 垄断 | W2 |
+| **以太网** | Ethernet | 通用网络协议，时延 5-20 微秒，生态开放、多厂商竞争 | W2 |
+| **RDMA** | Remote Direct Memory Access | 远程直接内存访问，绕过 CPU 直接在内存间传输数据，降低时延 | W2 |
+| **RoCE** | RDMA over Converged Ethernet | 以太网上的 RDMA 实现，让以太网具备类似 InfiniBand 的低时延能力 | W2 |
+| **NVLink** | NVLink | NVIDIA 的 GPU 间高速互联技术，用于同一服务器内部多 GPU 通信 | W2 |
+| **交换机** | Switch | 网络的"十字路口"，负责数据包在不同设备间的转发和路由 | W2 |
 
 ## 芯片与硬件（Week 4-6）
 
