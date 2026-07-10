@@ -1,18 +1,21 @@
 ---
-prev:
-  text: '12 周大纲'
-  link: '/outline'
-next: false
+layout: page
 ---
+
+<script setup>
+import { onMounted } from 'vue'
+import { useRouter, withBase } from 'vitepress'
+
+onMounted(() => {
+  const router = useRouter()
+  router.go(withBase('/week-04/lecture'))
+})
+</script>
 
 # Week 4 · GPU 架构深度拆解
 
-::: warning 🔒 本周内容尚未解锁
-完成上一周（Week 3 · 高速互联与网络拓扑）的思考题互动与存盘后自动解锁。
+::: tip ✅ 已解锁
+本周内容已解锁，正在跳转到讲义页面...
+
+如果没有自动跳转，请点击：[📖 进入讲义](/week-04/lecture)
 :::
-
-## 本周预告
-
-- NVIDIA 的护城河究竟是硬件还是 CUDA 软件生态？
-- Blackwell 架构的关键设计决策：为什么选择两个 die 封装？
-- SM（Streaming Multiprocessor）内部的计算流水线如何针对 Transformer 优化？
