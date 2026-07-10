@@ -63,7 +63,7 @@
 | **超大规模云厂商** | Hyperscaler | 微软/Google/Amazon 等自建数据中心的超大规模云计算企业 | W2 |
 | **TCO** | Total Cost of Ownership | 总拥有成本，包含资本支出和全生命周期运营成本的综合指标 | W2 |
 
-## 网络与互联（Week 1-2 互动补充）
+## 网络与互联（Week 2-3）
 
 | 术语 | 英文 | 定义 | 首现 |
 |------|------|------|------|
@@ -71,8 +71,22 @@
 | **以太网** | Ethernet | 通用网络协议，时延 5-20 微秒，生态开放、多厂商竞争 | W2 |
 | **RDMA** | Remote Direct Memory Access | 远程直接内存访问，绕过 CPU 直接在内存间传输数据，降低时延 | W2 |
 | **RoCE** | RDMA over Converged Ethernet | 以太网上的 RDMA 实现，让以太网具备类似 InfiniBand 的低时延能力 | W2 |
-| **NVLink** | NVLink | NVIDIA 的 GPU 间高速互联技术，用于同一服务器内部多 GPU 通信 | W2 |
+| **NVLink** | NVLink | NVIDIA GPU 间高速直连通道，绕过 PCIe 总线。NVLink 5.0 支持 72 GPU 全互联，单 GPU 带宽 1,800 GB/s | W2 |
+| **NVSwitch** | NVSwitch | NVLink 网络的交换芯片，类似高速公路立交枢纽，实现多 GPU 间任意全速通信 | W3 |
+| **NVLink Domain** | NVLink Domain | 通过 NVSwitch 实现 NVLink 全互联的 GPU 集合。NVLink 5.0 支持最大 72 GPU（9 台服务器）的 Domain | W3 |
 | **交换机** | Switch | 网络的"十字路口"，负责数据包在不同设备间的转发和路由 | W2 |
+| **UEC** | Ultra Ethernet Consortium | 超以太网联盟，2023 年由 AMD/Broadcom/Cisco/Intel/Meta/微软等成立，开发 AI 专用以太网标准 | W3 |
+| **Fat-Tree** | Fat-Tree Topology | 胖树拓扑，多层交换机组成树状结构，越往上带宽越大，实现任意节点间等带宽（Non-blocking） | W3 |
+| **Rail-Optimized** | Rail-Optimized Topology | 轨道优化拓扑，按 GPU 并行角色分组连接，匹配数据并行通信模式，减少交换机需求 20-30% | W3 |
+| **光模块** | Optical Transceiver | 光电信号转换模块，插在交换机/网卡上。万卡集群需 4-5 万个，占网络成本 40-60% | W3 |
+| **CPO** | Co-Packaged Optics | 光电共封装，将光模块集成到交换机芯片封装内，减少功耗和时延。2028+ 技术方向 | W3 |
+| **ToR** | Top of Rack Switch | 机架顶部交换机，连接同一机柜内的服务器，是网络拓扑的最底层 | W3 |
+| **数据并行** | Data Parallelism (DP) | 每块 GPU 持有完整模型副本，拆分数据。每步通过 AllReduce 同步梯度，通信量中等 | W3 |
+| **张量并行** | Tensor Parallelism (TP) | 把模型每一层切分到多块 GPU 上，每个算子都要同步。通信量极高，必须走 NVLink | W3 |
+| **流水线并行** | Pipeline Parallelism (PP) | 把模型不同层分到不同 GPU，相邻层单向传输激活值。通信量较低 | W3 |
+| **3D 并行** | 3D Parallelism | 同时使用 DP + TP + PP 三种并行策略的训练方法，核心是将不同并行方式匹配到不同网络层 | W3 |
+| **NCCL** | NVIDIA Collective Communications Library | NVIDIA 集合通信库，AllReduce 等操作的底层实现，深度优化与 NVLink/IB 配合 | W3 |
+| **三层锁定** | Triple Lock-in | NVIDIA 通过 CUDA（软件）+ NVLink（机内互联）+ InfiniBand（跨机互联）构建的系统级客户锁定 | W3 |
 
 ## 芯片与硬件（Week 4-6）
 
