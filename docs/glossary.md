@@ -88,7 +88,32 @@
 | **NCCL** | NVIDIA Collective Communications Library | NVIDIA 集合通信库，AllReduce 等操作的底层实现，深度优化与 NVLink/IB 配合 | W3 |
 | **三层锁定** | Triple Lock-in | NVIDIA 通过 CUDA（软件）+ NVLink（机内互联）+ InfiniBand（跨机互联）构建的系统级客户锁定 | W3 |
 
-## 芯片与硬件（Week 4-6）
+## 芯片与硬件（Week 4）
+
+| 术语 | 英文 | 定义 | 首现 |
+|------|------|------|------|
+| **SM** | Streaming Multiprocessor | 流式多处理器，GPU 的基本工作单元。每个 SM 包含 CUDA Core、Tensor Core、寄存器、共享内存等 | W4 |
+| **GPC** | Graphics Processing Cluster | 图形处理集群，包含多个 SM 的逻辑分组 | W4 |
+| **Tensor Core** | Tensor Core | 张量核心，GPU 中专为矩阵运算设计的硬件单元，一次可完成 4×4 矩阵乘加，速度是 CUDA Core 的 4-16 倍 | W4 |
+| **Warp** | Warp | GPU 最小执行单位，32 个线程一组，必须同时执行相同指令（SIMT 模式） | W4 |
+| **SIMT** | Single Instruction, Multiple Threads | 单指令多线程，GPU 的执行模型——一条指令同时驱动 32 个线程处理不同数据 | W4 |
+| **HBM** | High Bandwidth Memory | 高带宽内存，垂直堆叠的 DRAM 芯片通过硅中介层与 GPU 连接。仅 SK Hynix 和 Samsung 量产 | W4 |
+| **内存墙** | Memory Wall | 计算速度增长远快于内存带宽增长，导致内存成为系统瓶颈的现象 | W4 |
+| **算术强度** | Arithmetic Intensity | 计算量（FLOPS）与数据搬运量（Bytes）的比值，决定操作是计算受限还是内存受限 | W4 |
+| **MFU** | Model FLOPS Utilization | 模型算力利用率，实际训练速度对应的 FLOPS / GPU 理论峰值 FLOPS。通常 30-50% | W4 |
+| **光罩极限** | Reticle Limit | 芯片制造光刻机单次曝光的最大面积（约 858 mm²），限制单芯片最大尺寸 | W4 |
+| **双芯封装** | Multi-Die / Chiplet Design | 将两块芯片通过高速互联封装为一块逻辑芯片，突破光罩极限。B200 采用此设计 | W4 |
+| **硅中介层** | Silicon Interposer | 芯片封装中用于连接 GPU 芯片和 HBM 的硅基底层，提供数千条微型通道 | W4 |
+| **FP8 / FP4** | FP8 / FP4 | 8 位 / 4 位浮点精度，通过降低数值精度换取更高计算吞吐量。FP4 主要用于推理 | W4 |
+| **BF16** | Brain Floating Point 16 | Google 提出的 16 位浮点格式，保留 FP32 的指数范围但截断尾数，AI 训练主流精度 | W4 |
+| **结构化稀疏** | Structured Sparsity | Ampere 架构引入的优化：识别矩阵中 50% 的零值并跳过计算，理论性能翻倍 | W4 |
+| **Transformer Engine** | Transformer Engine | Hopper 架构引入的硬件模块，自动在 FP8 和 FP16 精度之间切换，兼顾性能和精度 | W4 |
+| **GPGPU** | General-Purpose Computing on GPU | 通用 GPU 计算，用 GPU 运行非图形计算任务（如 AI 训练、科学计算） | W4 |
+| **飞轮效应** | Flywheel Effect | NVIDIA 的正反馈循环：硬件领先→更多开发者→更丰富生态→更多企业采购→更多研发投入 | W4 |
+| **ROCm** | ROCm (Radeon Open Compute) | AMD 的 GPU 开放计算平台，CUDA 的主要竞争对手，生态规模约为 CUDA 的 1/10 | W4 |
+| **Fabless** | Fabless (无晶圆厂) | 芯片公司只做设计不做制造，由台积电等代工厂生产。NVIDIA、AMD 均为 Fabless 模式 | W4 |
+
+## 存储与内存（Week 5-6）
 
 （后续解锁后更新）
 
