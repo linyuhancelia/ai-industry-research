@@ -113,7 +113,27 @@
 | **ROCm** | ROCm (Radeon Open Compute) | AMD 的 GPU 开放计算平台，CUDA 的主要竞争对手，生态规模约为 CUDA 的 1/10 | W4 |
 | **Fabless** | Fabless (无晶圆厂) | 芯片公司只做设计不做制造，由台积电等代工厂生产。NVIDIA、AMD 均为 Fabless 模式 | W4 |
 
-## 存储与内存（Week 5-6）
+## 芯片竞争格局（Week 5）
+
+| 术语 | 英文 | 定义 | 首现 |
+|------|------|------|------|
+| **TPU** | Tensor Processing Unit | Google 自研的 AI 专用芯片，从头为矩阵运算设计。仅通过 Google Cloud 提供，不对外销售 | W5 |
+| **MXU** | Matrix Multiply Unit | TPU 内部的矩阵乘法专用单元，等价于 NVIDIA 的 Tensor Core | W5 |
+| **ICI** | Inter-Chip Interconnect | Google 自研的 TPU 间互联技术，替代 NVLink/InfiniBand | W5 |
+| **XLA** | Accelerated Linear Algebra | Google 开发的加速线性代数编译器，为 TPU 和 GPU 优化计算图 | W5 |
+| **JAX** | JAX | Google 的 AI 框架，基于 XLA 编译器，在 TPU 上性能最优 | W5 |
+| **ASIC** | Application-Specific Integrated Circuit | 专用集成电路，为特定任务从头设计的芯片。TPU、Cerebras WSE 均属于 ASIC | W5 |
+| **垂直整合** | Vertical Integration | 一家公司同时控制产业链多个层级（如 Google 自研芯片+网络+编译器+框架+模型） | W5 |
+| **WSE** | Wafer-Scale Engine | Cerebras 的晶圆级芯片，用整片 300mm 晶圆做一块芯片，面积是 GPU 的 56 倍 | W5 |
+| **LPU** | Language Processing Unit | Groq 的语言处理专用芯片，编译时完成所有调度决策，推理延迟是 GPU 的 1/5-1/10 | W5 |
+| **CANN** | Compute Architecture for Neural Networks | 华为自研的 AI 计算架构，替代 CUDA 的角色 | W5 |
+| **HCCS** | Huawei Cache Coherence System | 华为自研的芯片间互联技术，替代 NVLink 的角色 | W5 |
+| **MindSpore** | MindSpore | 华为自研的 AI 框架，替代 PyTorch 的角色 | W5 |
+| **H20** | NVIDIA H20 | NVIDIA 为符合美国出口管制而设计的"阉割版" GPU，性能约为 H100 的 1/4-1/5 | W5 |
+| **NPU** | Neural Processing Unit | 神经网络处理单元，通常指移动设备/边缘设备中的 AI 加速器 | W5 |
+| **存内计算** | In-Memory Compute | 在内存中直接执行计算，避免数据在内存和计算单元间搬运，直接解决内存墙问题 | W5 |
+
+## 存储与内存（Week 6）
 
 （后续解锁后更新）
 
