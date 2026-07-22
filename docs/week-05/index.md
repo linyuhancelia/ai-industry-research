@@ -1,18 +1,21 @@
 ---
-prev:
-  text: '12 周大纲'
-  link: '/outline'
-next: false
+layout: page
 ---
+
+<script setup>
+import { onMounted } from 'vue'
+import { useRouter, withBase } from 'vitepress'
+
+onMounted(() => {
+  const router = useRouter()
+  router.go(withBase('/week-05/lecture'))
+})
+</script>
 
 # Week 5 · AI 芯片竞争格局
 
-::: warning 🔒 本周内容尚未解锁
-完成上一周（Week 4 · GPU 架构深度拆解）的思考题互动与存盘后自动解锁。
+::: tip ✅ 已解锁
+本周内容已解锁，正在跳转到讲义页面...
+
+如果没有自动跳转，请点击：[📖 进入讲义](/week-05/lecture)
 :::
-
-## 本周预告
-
-- Google TPU / AMD MI / 华为昇腾的真实竞争力如何评估？
-- ASIC vs GPU 的终局之争：专用芯片能否在 AI 场景中取代通用 GPU？
-- 芯片制裁对中国 AI 产业链的实际影响有多大？替代路径是否可行？
