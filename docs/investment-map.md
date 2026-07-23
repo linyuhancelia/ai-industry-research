@@ -32,11 +32,12 @@ graph TB
         C1 --> C2 --> C3
     end
 
-    subgraph L4["🔲 第四层：芯片与硬件 (Week 4-6) 🔒"]
+    subgraph L4["🔲 第四层：芯片与硬件 (Week 4-6)"]
         direction LR
-        D1["GPU/ASIC"]
-        D2["HBM/存储"]
-        D3["封装"]
+        D1["GPU/ASIC<br/>设计+制造"]
+        D2["HBM/存储<br/>SK Hynix/Samsung"]
+        D3["先进封装<br/>CoWoS"]
+        D1 --> D2 --> D3
     end
 
     subgraph L5["🧮 第五层：模型与算法 (Week 7-9) 🔒"]
@@ -58,7 +59,7 @@ graph TB
     style L1 fill:#ff6b6b22,stroke:#ff6b6b
     style L2 fill:#ffd93d22,stroke:#ffd93d
     style L3 fill:#6bcb7722,stroke:#6bcb77
-    style L4 fill:#33333311,stroke:#999
+    style L4 fill:#ffd93d22,stroke:#ffd93d
     style L5 fill:#33333311,stroke:#999
     style L6 fill:#33333311,stroke:#999
 ```
@@ -95,7 +96,21 @@ graph TB
 | 网络软件 NCCL | NVIDIA（开源但绑定） | 极强（生态锁定） | — | 非直接收入，生态锁定关键 |
 | NVLink/NVSwitch | NVIDIA | 极强（独占） | 低 | ⭐⭐⭐ 无替代方案，随 GPU 捆绑销售 |
 
-### 第四层至第六层
+### 第四层：芯片与硬件（Week 4-6 ✅）
+
+| 环节 | 代表公司 | 定价权 | 产能弹性 | 超额利润判断 |
+|------|---------|--------|---------|-------------|
+| GPU 设计 | NVIDIA | 极强（CUDA 生态 + 80% 份额） | 低（台积电产能受限） | ⭐⭐⭐⭐ 飞轮加速中 |
+| GPU 制造（代工） | 台积电 | 极强（先进制程双寡头） | 极低（建厂 3-5 年） | ⭐⭐⭐⭐ 持续超额利润 |
+| HBM（AI 内存） | SK Hynix、Samsung | 极强（双寡头 + AI 刚需） | 极低（扩产 1.5-2 年） | ⭐⭐⭐⭐ AI 时代最稀缺元器件 |
+| CoWoS 先进封装 | 台积电 | 极强（独家技术） | 极低（扩产 1-2 年） | ⭐⭐⭐⭐ GPU 出货最紧瓶颈 |
+| GPU 竞品设计 | AMD | 弱（缺乏生态锁定） | 中 | ⭐⭐ 推理市场份额有望增长 |
+| 自研芯片 | Google TPU | N/A（不对外卖） | 低 | 不参与公开市场定价 |
+| 国产 AI 芯片 | 华为昇腾 | 中（政策+市场保护） | 低（制程约束） | ⭐⭐⭐ 中国市场结构性需求 |
+| CXL 控制器 | Astera Labs、澜起科技 | 弱（市场早期） | 中 | ⭐⭐ 长期看好，短期收入极小 |
+| 并行文件系统 | WekaFS、DDN | 中 | 中 | ⭐⭐ 软件差异化，但替代品多 |
+
+### 第五层至第六层
 
 （随课程推进逐步解锁更新）
 
@@ -116,4 +131,9 @@ NVIDIA 同时控制 GPU（第四层）、NVLink/NVSwitch（第三层机内）、
 - 第一层：天然气电厂 vs SMR 的代际转换（2028+）
 - 第二层：风冷 → 液冷的代际转换（正在进行）
 - 第三层：400G → 800G → 1.6T 光模块的代际转换（18-24 个月窗口）
+- 第四层：HBM3 → HBM3e → HBM4 代际转换（SK Hynix 先发优势窗口）
 - 在每个窗口期内，早期具备新技术能力的厂商享受短期超额利润
+
+### 洞察 4：HBM 是 AI 产业链中被低估的利润捕获点
+
+GPU 的关注度集中在 NVIDIA，但 GPU 物料成本的 40-60% 流向了 SK Hynix 的 HBM。加上台积电的 CoWoS 封装，NVIDIA 自身在硬件层的成本份额可能只有 20-30%——它的超额利润主要来自 CUDA 生态的软件锁定溢价，而非硬件本身。

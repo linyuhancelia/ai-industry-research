@@ -135,7 +135,25 @@
 
 ## 存储与内存（Week 6）
 
-（后续解锁后更新）
+| 术语 | 英文 | 定义 | 首现 |
+|------|------|------|------|
+| **Roofline 模型** | Roofline Model | 屋顶线模型，分析操作是计算受限还是内存带宽受限的经典工具。横轴算术强度，纵轴实际性能 | W6 |
+| **算术强度** | Arithmetic Intensity | 计算量（FLOPS）与数据搬运量（Bytes）的比值。低于 GPU 拐点的操作为内存受限 | W4→W6 |
+| **KV Cache** | Key-Value Cache | LLM 推理时存储历史 token 注意力信息的缓存。上下文越长，KV Cache 越大，是推理内存墙的核心 | W6 |
+| **TSV** | Through-Silicon Via | 硅通孔，HBM 芯片堆叠中贯穿多层 DRAM 的垂直微型通道，直径仅 5-10 微米 | W6 |
+| **CoWoS** | Chip on Wafer on Substrate | 台积电的先进封装技术，将 GPU 芯片和 HBM 通过硅中介层封装在一起。GPU 出货的最紧瓶颈 | W6 |
+| **HBM3e** | HBM3e | 第三代增强版高带宽内存，12 层堆叠，单颗带宽 1,200 GB/s。B200 GPU 使用 | W6 |
+| **HBM4** | HBM4 | 下一代 HBM，预计 2026 年量产，12-16 层堆叠，单颗带宽约 2,000 GB/s | W6 |
+| **CXL** | Compute Express Link | 计算快速链路，基于 PCIe 物理层的新互联协议，支持内存池化和共享 | W6 |
+| **内存池化** | Memory Pooling | 通过 CXL 等协议将多台服务器的内存资源统一管理、按需分配的技术 | W6 |
+| **并行文件系统** | Parallel File System | 数据分散存储在多台服务器上、多路并行读取的文件系统。AI 训练集群标配 | W6 |
+| **Lustre** | Lustre | 开源并行文件系统，HPC 和 AI 训练集群广泛使用 | W6 |
+| **WekaFS** | WekaFS | 为 AI 训练优化的全闪存并行文件系统，NVMe 原生设计 | W6 |
+| **PIM** | Processing-in-Memory | 存内计算，在内存芯片内部嵌入计算逻辑，避免数据搬运。Samsung HBM-PIM 已试验 | W5→W6 |
+| **NDP** | Near-Data Processing | 近存计算，在内存芯片旁边放置计算单元，大幅减少搬运距离 | W6 |
+| **3D V-Cache** | 3D Vertical Cache | AMD 的 3D 堆叠缓存技术，将额外 SRAM 芯片堆叠在处理器上方，缓存容量翻 3 倍 | W6 |
+| **晶圆减薄** | Wafer Thinning | HBM 制造中将 DRAM 晶圆磨薄到 30-40 微米的工艺，是堆叠的前提条件 | W6 |
+| **pJ** | Picojoule | 皮焦耳，10⁻¹² 焦耳，衡量芯片内部单次操作能耗的单位 | W6 |
 
 ## 模型与算法（Week 7-9）
 

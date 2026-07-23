@@ -45,7 +45,7 @@ graph TB
 |------|------|---------|
 | **W4** | [GPU 架构深度拆解](/week-04/lecture) | NVIDIA 护城河是硬件还是 CUDA？Blackwell 的关键设计决策？ |
 | **W5** | [AI 芯片竞争格局](/week-05/lecture) | TPU / AMD MI / 华为昇腾的真实竞争力？ASIC vs GPU 终局？ |
-| **W6** | 存储与内存墙 | HBM 为何成为 AI 芯片"命门"？CXL 能否打破内存墙？ |
+| **W6** | [存储与内存墙](/week-06/lecture) | HBM 为何成为 AI 芯片"命门"？CXL 能否打破内存墙？ |
 
 ### 第三阶段：模型与算法层（Week 7-9）
 

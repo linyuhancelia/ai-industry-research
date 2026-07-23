@@ -30,6 +30,7 @@ export default withMermaid(
             { text: 'Week 3 · 高速互联', link: '/week-03/lecture' },
             { text: 'Week 4 · GPU 架构', link: '/week-04/lecture' },
             { text: 'Week 5 · AI 芯片竞争', link: '/week-05/lecture' },
+            { text: 'Week 6 · 存储与内存墙', link: '/week-06/lecture' },
           ]
         },
         { text: '术语表', link: '/glossary' },
@@ -101,7 +102,15 @@ export default withMermaid(
                   { text: '✅ 认知存盘', link: '/week-05/takeaways' },
                 ]
               },
-              { text: 'Week 6 · 存储与内存墙 🔒', link: '/week-06/' },
+              {
+                text: 'Week 6 · 存储与内存墙',
+                collapsed: false,
+                items: [
+                  { text: '📖 讲义', link: '/week-06/lecture' },
+                  { text: '💬 互动记录', link: '/week-06/interaction' },
+                  { text: '✅ 认知存盘', link: '/week-06/takeaways' },
+                ]
+              },
             ]
           },
           {
