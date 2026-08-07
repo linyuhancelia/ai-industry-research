@@ -51,7 +51,7 @@ graph TB
 
 | 周次 | 模块 | 核心命题 |
 |------|------|---------|
-| **W7** | Transformer 与 Scaling Law | 注意力机制的计算瓶颈？Scaling Law 的统计力学解释？ |
+| **W7** | [Transformer 与 Scaling Law](/week-07/lecture) | 注意力机制的计算瓶颈？Scaling Law 的统计力学解释？ |
 | **W8** | 训练工程 | 3D 并行的工程取舍？合成数据天花板？RLHF/DPO 本质区别？ |
 | **W9** | 推理优化与推理经济学 | 量化/蒸馏的帕累托前沿？推理成本为何决定 AI 商业化天花板？ |
 

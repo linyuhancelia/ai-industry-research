@@ -31,6 +31,7 @@ export default withMermaid(
             { text: 'Week 4 · GPU 架构', link: '/week-04/lecture' },
             { text: 'Week 5 · AI 芯片竞争', link: '/week-05/lecture' },
             { text: 'Week 6 · 存储与内存墙', link: '/week-06/lecture' },
+            { text: 'Week 7 · Transformer', link: '/week-07/lecture' },
           ]
         },
         { text: '术语表', link: '/glossary' },
@@ -114,12 +115,20 @@ export default withMermaid(
             ]
           },
           {
-            text: '第三阶段：模型与算法层 🔒',
-            collapsed: true,
+            text: '第三阶段：模型与算法层',
+            collapsed: false,
             items: [
-              { text: 'Week 7 · Transformer 与 Scaling Law', link: '/week-07/' },
-              { text: 'Week 8 · 训练工程', link: '/week-08/' },
-              { text: 'Week 9 · 推理优化', link: '/week-09/' },
+              {
+                text: 'Week 7 · Transformer',
+                collapsed: false,
+                items: [
+                  { text: '📖 讲义', link: '/week-07/lecture' },
+                  { text: '💬 互动记录', link: '/week-07/interaction' },
+                  { text: '✅ 认知存盘', link: '/week-07/takeaways' },
+                ]
+              },
+              { text: 'Week 8 · 训练工程 🔒', link: '/week-08/' },
+              { text: 'Week 9 · 推理优化 🔒', link: '/week-09/' },
             ]
           },
           {

@@ -39,7 +39,7 @@ features:
 | 芯片与硬件 | Week 4 | GPU 架构深度拆解 | ✅ 已完成 |
 | 芯片与硬件 | Week 5 | AI 芯片竞争格局 | ✅ 已完成 |
 | 芯片与硬件 | Week 6 | 存储与内存墙 | ✅ 已完成 |
-| 模型与算法 | Week 7-9 | Transformer / 训练 / 推理 | 🔒 未解锁 |
+| 模型与算法 | Week 7-9 | Transformer / 训练 / 推理 | 🟡 Week 7 进行中 |
 | 应用与 Agent | Week 10-12 | 云计算 / Agent / 终局 | 🔒 未解锁 |
 
 ## 交互机制

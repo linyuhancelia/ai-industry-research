@@ -163,7 +163,30 @@
 
 ## 模型与算法（Week 7-9）
 
-（后续解锁后更新）
+| 术语 | 英文 | 定义 | 首现 |
+|------|------|------|------|
+| **Transformer** | Transformer | 2017 年 Google 提出的深度学习架构，用注意力机制替代循环结构，成为几乎所有现代 AI 大模型的基础 | W7 |
+| **Attention** | Attention Mechanism | 注意力机制，让模型在处理每个 token 时自动判断其他 token 中哪些与自己最相关，并重点关注 | W7 |
+| **Self-Attention** | Self-Attention | 自注意力，序列中的每个 token 与同一序列的所有其他 token 计算相关性 | W7 |
+| **Q/K/V** | Query / Key / Value | 注意力机制的三个向量。Query=我想知道什么，Key=我能提供什么，Value=我的具体内容 | W7 |
+| **MHA** | Multi-Head Attention | 多头注意力，多个注意力头从不同角度理解信息。GPT-4 级别有 96-128 个头 | W7 |
+| **FFN** | Feed-Forward Network | 前馈网络，Transformer Block 中每个 token 独立处理信息的全连接层 | W7 |
+| **残差连接** | Residual Connection | 将层的输入直接加到输出上，防止深层网络信息丢失 | W7 |
+| **LayerNorm** | Layer Normalization | 层归一化，将数值范围稳定在合理区间，帮助训练收敛 | W4→W7 |
+| **Decoder-Only** | Decoder-Only Architecture | 仅解码器架构，将所有任务统一为"预测下一个 Token"。GPT/Claude/Llama 均采用 | W7 |
+| **Next Token Prediction** | Next Token Prediction | 下一个 Token 预测，Decoder-Only 模型的核心训练目标 | W7 |
+| **Token** | Token | 词元，模型处理文本的最小单位。中文约 1 字≈1-2 token，英文约 1 词≈1-2 token | W7 |
+| **Tokenizer** | Tokenizer | 分词器，将文本切分为 Token 序列的工具 | W7 |
+| **Embedding** | Embedding | 嵌入层，将离散的 Token ID 转换为连续向量（一串数字），表示 Token 在"意义空间"的坐标 | W7 |
+| **Scaling Law** | Scaling Law | 缩放定律，模型性能与参数量(N)、数据量(D)、计算量(C) 之间的幂律关系 | W7 |
+| **幂律** | Power Law | 变量之间的指数关系 y ∝ x^α，Scaling Law 的数学形式 | W7 |
+| **Loss** | Loss / Cross-Entropy Loss | 损失值，衡量模型预测与实际答案的差距。越低=模型越好 | W7 |
+| **Chinchilla 最优** | Chinchilla Optimal | DeepMind 2022 年提出的计算最优训练配方：训练 Token 数 ≈ 参数量 × 20 | W7 |
+| **过度训练** | Over-Training (Inference-Optimal) | 用远超 Chinchilla 最优的数据量训练更小的模型，优化推理成本而非训练成本 | W7 |
+| **合成数据** | Synthetic Data | 由模型生成的训练数据，用于缓解高质量自然数据的天花板 | W7 |
+| **RNN** | Recurrent Neural Network | 循环神经网络，Transformer 之前处理序列数据的主流架构，信息依次传递（串行） | W7 |
+| **LSTM** | Long Short-Term Memory | 长短期记忆网络，RNN 的改进版，通过"门"机制缓解长距离信息丢失，但仍是串行 | W7 |
+| **Router** | Router (MoE) | MoE 架构中的路由器，决定每个 token 激活哪些 Expert | W7 |
 
 ## 应用与 Agent（Week 10-12）
 
