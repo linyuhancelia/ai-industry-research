@@ -154,6 +154,12 @@
 | **3D V-Cache** | 3D Vertical Cache | AMD 的 3D 堆叠缓存技术，将额外 SRAM 芯片堆叠在处理器上方，缓存容量翻 3 倍 | W6 |
 | **晶圆减薄** | Wafer Thinning | HBM 制造中将 DRAM 晶圆磨薄到 30-40 微米的工艺，是堆叠的前提条件 | W6 |
 | **pJ** | Picojoule | 皮焦耳，10⁻¹² 焦耳，衡量芯片内部单次操作能耗的单位 | W6 |
+| **MoE** | Mixture of Experts | 混合专家模型，每次推理只激活部分参数（如 10-20%），减少计算和内存访问量。GPT-4 推测使用此架构 | W6 互动 |
+| **GQA** | Grouped Query Attention | 分组查询注意力，多个 Query head 共享 Key/Value head，KV Cache 缩小 4-8 倍。Llama 3 使用 | W6 互动 |
+| **SSM** | State Space Model | 状态空间模型（如 Mamba），用固定大小的状态向量替代 KV Cache，上下文长度不影响内存占用 | W6 互动 |
+| **Flash Attention** | Flash Attention | 闪存注意力，重构注意力计算顺序使其全部在片上 SRAM 完成，减少 HBM 读写 5-20 倍 | W6 互动 |
+| **QAT** | Quantization-Aware Training | 量化感知训练，在训练阶段就针对低精度（FP8/FP4）优化模型，减少推理时精度损失 | W6 互动 |
+| **Take-or-Pay** | Take-or-Pay Contract | 照付不议合同，买方承诺最低采购量，即使需求下降也必须付款，换取供应商产能优先权 | W6 互动 |
 
 ## 模型与算法（Week 7-9）
 
