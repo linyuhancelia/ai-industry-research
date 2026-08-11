@@ -188,6 +188,35 @@
 | **LSTM** | Long Short-Term Memory | 长短期记忆网络，RNN 的改进版，通过"门"机制缓解长距离信息丢失，但仍是串行 | W7 |
 | **Router** | Router (MoE) | MoE 架构中的路由器，决定每个 token 激活哪些 Expert | W7 |
 
+## 训练工程（Week 8）
+
+| 术语 | 英文 | 定义 | 首现 |
+|------|------|------|------|
+| **前向传播** | Forward Pass | 数据从输入经过模型每一层计算得到预测结果的过程 | W1→W8 |
+| **反向传播** | Backpropagation | 从 Loss 出发反向计算每个参数的梯度，用于指导参数更新方向 | W8 |
+| **梯度** | Gradient | 参数更新的"方向"和"大小"——告诉模型每个参数应该往哪调、调多少 | W8 |
+| **Batch** | Mini-Batch | 每步训练中同时处理的数据量。越大越稳定但越占内存 | W8 |
+| **FSDP** | Fully Sharded Data Parallelism | 完全分片数据并行，将参数/梯度/优化器状态分片到各 GPU，用通信换内存 | W8 |
+| **ZeRO** | Zero Redundancy Optimizer | DeepSpeed 的内存优化策略，三级（ZeRO-1/2/3）逐步消除数据并行中的冗余存储 | W8 |
+| **Micro-batch** | Micro-batch | 流水线并行中将一个大 Batch 切成多个小批次连续送入，减少气泡浪费 | W8 |
+| **Pipeline Bubble** | Pipeline Bubble | 流水线并行中 GPU 空闲等待的时间浪费。微批次可减少但无法完全消除 | W8 |
+| **混合精度训练** | Mixed Precision Training | 用 BF16 做前向/反向计算（快），用 FP32 存储主参数和更新（稳），兼顾速度和精度 | W8 |
+| **梯度检查点** | Gradient Checkpointing | 只保存部分层激活值，反向传播时重算其余部分——用 30% 额外时间换 60-70% 内存节省 | W8 |
+| **Activation** | Activation（激活值） | 前向传播中每一层的中间计算结果，反向传播需要它来计算梯度 | W8 |
+| **数据去重** | Deduplication | 训练数据预处理中删除重复内容（MinHash / Exact Dedup），重复数据有害模型质量 | W8 |
+| **数据配比** | Data Mix | 预训练数据中不同类型（网页/代码/书籍/数学）的比例，显著影响模型能力分布 | W8 |
+| **合成数据** | Synthetic Data | 由 AI 模型生成的训练数据，用于补充真实数据不足。可验证领域（数学/代码）质量最高 | W7→W8 |
+| **Model Collapse** | Model Collapse | 模型崩塌，用模型自身生成的数据反复训练导致多样性消失、错误累积的现象 | W8 |
+| **SFT** | Supervised Fine-Tuning | 监督微调，用高质量对话数据教会预训练模型"问→答"的对话格式 | W8 |
+| **RLHF** | Reinforcement Learning from Human Feedback | 人类反馈强化学习，通过奖励模型+PPO 让模型学会人类偏好（有用、安全、诚实） | W8 |
+| **DPO** | Direct Preference Optimization | 直接偏好优化，跳过奖励模型，直接从偏好对比数据优化模型。RLHF 的简化替代方案 | W8 |
+| **Reward Model** | Reward Model | 奖励模型，学会模仿人工标注员的偏好判断，给模型回答打分 | W8 |
+| **PPO** | Proximal Policy Optimization | 近端策略优化，RLHF 中使用的强化学习算法，调整模型使其生成高奖励回答 | W8 |
+| **Checkpoint** | Checkpoint | 训练存档点，定期保存模型全部状态（参数+优化器+位置）。故障恢复的前提 | W8 |
+| **Megatron-LM** | Megatron-LM | NVIDIA 开发的大模型训练框架，原生支持 3D 并行，万卡训练首选 | W8 |
+| **DeepSpeed** | DeepSpeed | Microsoft 开发的训练优化框架，以 ZeRO 内存优化闻名 | W8 |
+| **Red Teaming** | Red Teaming | 红队测试，模型上线前由专门团队寻找安全漏洞和有害输出的过程 | W8 |
+
 ## 应用与 Agent（Week 10-12）
 
 （后续解锁后更新）
