@@ -217,6 +217,31 @@
 | **DeepSpeed** | DeepSpeed | Microsoft 开发的训练优化框架，以 ZeRO 内存优化闻名 | W8 |
 | **Red Teaming** | Red Teaming | 红队测试，模型上线前由专门团队寻找安全漏洞和有害输出的过程 | W8 |
 
+## 推理优化（Week 9）
+
+| 术语 | 英文 | 定义 | 首现 |
+|------|------|------|------|
+| **推理** | Inference | 用训练好的模型处理新数据产生结果的过程。Week 1 已介绍，本周深入工程优化 | W1→W9 |
+| **TTFT** | Time To First Token | 首字时延，模型生成第一个 token 的时间。交互式场景的核心延迟指标 | W9 |
+| **延迟** | Latency | 单次请求的响应时间。聊天等交互场景对延迟敏感 | W9 |
+| **吞吐** | Throughput | 单位时间能处理的 token 总量。批处理场景对吞吐敏感 | W9 |
+| **量化** | Quantization | 将模型参数从高精度（BF16/FP32）压缩到低精度（INT8/INT4/FP8），换取内存节省和速度提升 | W4→W9 |
+| **INT8 / INT4** | INT8 / INT4 | 8 位 / 4 位整数精度。INT8 是推理甜点区（损失<3%，省4倍），INT4 是极限 | W9 |
+| **PTQ** | Post-Training Quantization | 训练后量化，直接压缩已训练模型。简单快但低精度下损失大。类比"拍完照再压缩 JPEG" | W9 |
+| **QAT** | Quantization-Aware Training | 量化感知训练，训练时就模拟量化。低精度下精度更好但需重训。类比"拍照时按 JPEG 规则调整" | W6→W9 |
+| **PagedAttention** | PagedAttention | 借鉴操作系统虚拟内存分页机制管理 KV Cache，消除内存碎片。vLLM 核心创新，吞吐提升 2-4 倍 | W9 |
+| **vLLM** | vLLM | UC Berkeley 开发的高吞吐推理框架，PagedAttention 的发源地 | W9 |
+| **Speculative Decoding** | Speculative Decoding | 投机解码，小模型先生成草稿 token，大模型一次验证。延迟改善 2-3 倍且不损精度 | W9 |
+| **蒸馏** | Knowledge Distillation | 用大而强的"教师模型"指导训练小而快的"学生模型"，让学生逼近教师能力。成本降 10 倍 | W9 |
+| **帕累托前沿** | Pareto Frontier | 在"精度损失"和"成本节省"之间不存在"既更便宜又更精确"方案的最优边界 | W9 |
+| **TensorRT-LLM** | TensorRT-LLM | NVIDIA 的推理优化框架，极致优化但绑定 NVIDIA GPU | W9 |
+| **TGI** | Text Generation Inference | HuggingFace 的推理框架，易用、开源生态好 | W9 |
+| **llama.cpp** | llama.cpp | 社区开发的轻量推理引擎，支持 CPU/边缘设备和多种量化 | W9 |
+| **SGLang** | SGLang | 面向结构化生成的推理框架，Agent/工具调用场景优化 | W9 |
+| **中心化部署** | Centralized Deployment | 推理集群集中在电费便宜地区，延迟高但成本低 | W9 |
+| **边缘部署** | Edge Deployment | 推理集群分散到靠近用户的城市，低延迟但成本高 | W9 |
+| **L40S / A10** | L40S / A10 | NVIDIA 的推理性价比 GPU，相比 H100 更适合推理负载 | W9 |
+
 ## 应用与 Agent（Week 10-12）
 
 （后续解锁后更新）

@@ -33,6 +33,7 @@ export default withMermaid(
             { text: 'Week 6 · 存储与内存墙', link: '/week-06/lecture' },
             { text: 'Week 7 · Transformer', link: '/week-07/lecture' },
             { text: 'Week 8 · 训练工程', link: '/week-08/lecture' },
+            { text: 'Week 9 · 推理优化', link: '/week-09/lecture' },
           ]
         },
         { text: '术语表', link: '/glossary' },
@@ -137,7 +138,15 @@ export default withMermaid(
                   { text: '✅ 认知存盘', link: '/week-08/takeaways' },
                 ]
               },
-              { text: 'Week 9 · 推理优化 🔒', link: '/week-09/' },
+              {
+                text: 'Week 9 · 推理优化',
+                collapsed: false,
+                items: [
+                  { text: '📖 讲义', link: '/week-09/lecture' },
+                  { text: '💬 互动记录', link: '/week-09/interaction' },
+                  { text: '✅ 认知存盘', link: '/week-09/takeaways' },
+                ]
+              },
             ]
           },
           {

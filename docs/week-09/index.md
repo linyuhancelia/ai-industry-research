@@ -5,14 +5,20 @@ prev:
 next: false
 ---
 
-# Week 9 · 推理优化
+# Week 9 · 推理优化与推理经济学
 
-::: warning 🔒 本周内容尚未解锁
-完成上一周（Week 8 · 训练工程）的思考题互动与存盘后自动解锁。
+::: tip ✅ 已解锁
+本周内容已解锁，正在跳转到讲义页面...
+
+如果没有自动跳转，请点击：[📖 进入讲义](/week-09/lecture)
 :::
 
-## 本周预告
+<script setup>
+import { onMounted } from 'vue'
+import { useRouter, withBase } from 'vitepress'
 
-- 量化（INT8/INT4/FP8）与蒸馏的帕累托前沿：精度损失换吞吐量的最佳平衡点？
-- 推理成本为何决定 AI 商业化的天花板？从 token 经济学看定价逻辑？
-- KV Cache、PagedAttention、Speculative Decoding 等推理加速技术的原理与实战效果？
+onMounted(() => {
+  const router = useRouter()
+  router.go(withBase('/week-09/lecture'))
+})
+</script>
