@@ -7,12 +7,18 @@ next: false
 
 # Week 10 · 云计算与算力调度
 
-::: warning 🔒 本周内容尚未解锁
-完成上一周（Week 9 · 推理优化）的思考题互动与存盘后自动解锁。
+::: tip ✅ 已解锁
+本周内容已解锁，正在跳转到讲义页面...
+
+如果没有自动跳转，请点击：[📖 进入讲义](/week-10/lecture)
 :::
 
-## 本周预告
+<script setup>
+import { onMounted } from 'vue'
+import { useRouter, withBase } from 'vitepress'
 
-- AWS / Azure / GCP 的 AI 基础设施差异：谁在 GPU 云的竞争中占据结构性优势？
-- Serverless GPU 的经济模型能否成立？冷启动延迟与利用率的矛盾如何解决？
-- 算力调度的核心挑战：如何在异构硬件上实现高效的资源分配与弹性伸缩？
+onMounted(() => {
+  const router = useRouter()
+  router.go(withBase('/week-10/lecture'))
+})
+</script>

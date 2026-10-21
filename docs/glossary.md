@@ -244,4 +244,25 @@
 
 ## 应用与 Agent（Week 10-12）
 
-（后续解锁后更新）
+| 中文 | 英文 | 定义 | 出现周次 |
+|------|------|------|---------|
+| **利用率** | Utilization | 实际使用的 GPU·小时 ÷ 付费的 GPU·小时。有效成本 = 名义成本 ÷ 利用率 | W10 |
+| **资本开支 / 运营开支** | CapEx / OpEx | 自建是一次性大额资本开支并自担折旧，租赁是按量累积的运营开支 | W10 |
+| **按需实例** | On-Demand | 随用随停，单价最高（基准价） | W10 |
+| **预留实例** | Reserved Instance | 承诺 1-3 年换取 35-55% 折扣，合同期内不用也付钱 | W10 |
+| **竞价实例** | Spot / Preemptible | 约七折，但可被云厂商随时回收。折扣是中断风险的补偿 | W10 |
+| **Serverless GPU** | Serverless GPU | 按实际执行时间计费、空闲不计费的 GPU 服务。受限于冷启动 | W10 |
+| **冷启动** | Cold Start | 从无实例到第一个请求可被处理的时间。GPU 场景 30 秒-2 分钟，是数据搬运的物理下限 | W10 |
+| **预热池** | Warm Pool | 保留常驻实例接住突发请求。代价是破坏了"不用不计费"的承诺 | W10 |
+| **装箱** | Bin Packing | 把大小不一的任务塞进固定规格的卡，尽量不留空隙 | W10 |
+| **拓扑感知调度** | Topology-Aware Scheduling | 把通信密集的任务收拢到同机 / 同机架，避免跨机架带宽瓶颈 | W3→W10 |
+| **抢占** | Preemption | 高优任务到达时踢掉低优任务腾出资源 | W10 |
+| **MIG** | Multi-Instance GPU | 硬件级切分一张 A100/H100 为最多 7 个独立实例，显存与算力强隔离 | W10 |
+| **MPS** | Multi-Process Service | 多进程共享 SM 提升并发，但无显存隔离 | W10 |
+| **时间片** | Time-Slicing | 多容器轮流使用整卡，无任何隔离，仅适合开发测试 | W10 |
+| **弹性伸缩** | Auto-scaling | 按流量自动增减实例。有效的前提是扩容耗时 < 流量爬坡时间 | W10 |
+| **超大规模云** | Hyperscaler | AWS / Azure / GCP 等。核心优势是多租户削峰填谷带来的高利用率 | W10 |
+| **Neocloud** | Neocloud | CoreWeave / Lambda 等纯 GPU 云。优势是单位成本与交付速度，软肋是 GPU 残值与客户集中度 | W10 |
+| **Trainium / Inferentia** | Trainium / Inferentia | AWS 自研训练 / 推理芯片。主要价值在对 NVIDIA 的议价筹码 | W5→W10 |
+| **EFA** | Elastic Fabric Adapter | AWS 自研的高性能网络适配器，走以太网路线对标 InfiniBand | W3→W10 |
+| **杰文斯悖论** | Jevons Paradox | 单位成本下降反而放大总消耗量。上游绝对营收可涨，但相对议价能力下降 | W9→W10 |

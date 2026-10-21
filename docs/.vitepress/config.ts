@@ -34,6 +34,7 @@ export default withMermaid(
             { text: 'Week 7 · Transformer', link: '/week-07/lecture' },
             { text: 'Week 8 · 训练工程', link: '/week-08/lecture' },
             { text: 'Week 9 · 推理优化', link: '/week-09/lecture' },
+            { text: 'Week 10 · 云计算与算力调度', link: '/week-10/lecture' },
           ]
         },
         { text: '术语表', link: '/glossary' },
@@ -150,12 +151,20 @@ export default withMermaid(
             ]
           },
           {
-            text: '第四阶段：应用与 Agent 层 🔒',
-            collapsed: true,
+            text: '第四阶段：应用与 Agent 层',
+            collapsed: false,
             items: [
-              { text: 'Week 10 · 云计算与算力调度', link: '/week-10/' },
-              { text: 'Week 11 · AI Agent 架构', link: '/week-11/' },
-              { text: 'Week 12 · 终局推演', link: '/week-12/' },
+              {
+                text: 'Week 10 · 云计算与算力调度',
+                collapsed: false,
+                items: [
+                  { text: '📖 讲义', link: '/week-10/lecture' },
+                  { text: '💬 互动记录', link: '/week-10/interaction' },
+                  { text: '✅ 认知存盘', link: '/week-10/takeaways' },
+                ]
+              },
+              { text: 'Week 11 · AI Agent 架构 🔒', link: '/week-11/' },
+              { text: 'Week 12 · 终局推演 🔒', link: '/week-12/' },
             ]
           },
           {

@@ -52,14 +52,14 @@ graph TB
 | 周次 | 模块 | 核心命题 |
 |------|------|---------|
 | **W7** | [Transformer 与 Scaling Law](/week-07/lecture) | 注意力机制的计算瓶颈？Scaling Law 的统计力学解释？ |
-| **W8** | 训练工程 | 3D 并行的工程取舍？合成数据天花板？RLHF/DPO 本质区别？ |
-| **W9** | 推理优化与推理经济学 | 量化/蒸馏的帕累托前沿？推理成本为何决定 AI 商业化天花板？ |
+| **W8** | [训练工程](/week-08/lecture) | 3D 并行的工程取舍？合成数据天花板？RLHF/DPO 本质区别？ |
+| **W9** | [推理优化与推理经济学](/week-09/lecture) | 量化/蒸馏的帕累托前沿？推理成本为何决定 AI 商业化天花板？ |
 
 ### 第四阶段：应用与 Agent 层（Week 10-12）
 
 | 周次 | 模块 | 核心命题 |
 |------|------|---------|
-| **W10** | 云计算与算力调度 | AWS/Azure/GCP 的 AI 基础设施差异？Serverless GPU 的经济模型？ |
+| **W10** | [云计算与算力调度](/week-10/lecture) | AWS/Azure/GCP 的 AI 基础设施差异？Serverless GPU 的经济模型？ |
 | **W11** | AI Agent 架构与工具链 | RAG/MCP 的技术本质？多 Agent 系统的工程挑战？ |
 | **W12** | 终局推演 | Copilot vs 自主 Agent？AI SaaS 定价变革？哪一层捕获最多价值？ |
 
